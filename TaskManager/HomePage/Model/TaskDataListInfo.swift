@@ -30,9 +30,17 @@ class TaskDataListInfo{
     func removeItem(id:String){
         TaskCoreDataInfo.deleteItem(uuid: id)
         updateList()
-//        tasksDataList.remove(at: index)
-
+    }
+    
+    func updateItemCheckState(isChecked:Bool, index:Int){
+        if index < 0 || index >= tasksDataList.count{
+            return
+        }
+        let previousData = tasksDataList[index]
+        let task = TaskDataModel(id: previousData.uniqueID ?? "", title: previousData.title ?? "", description: previousData.taskDescription ?? "", dueDate: previousData.dueDate ?? Date(), isChecked: isChecked)
         
+        TaskCoreDataInfo.updateElement(taskInfo: task)
+        updateList()
     }
     
     func removeAllItem(){

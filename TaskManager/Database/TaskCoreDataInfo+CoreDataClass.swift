@@ -22,6 +22,7 @@ public class TaskCoreDataInfo: NSManagedObject {
                 taskInfoDB.title = taskInfo.title
                 taskInfoDB.taskDescription = taskInfo.description
                 taskInfoDB.dueDate = taskInfo.dueDate
+                taskInfoDB.isChecked = taskInfo.isChecked
                 try context.save()
             }
             catch {
@@ -45,6 +46,7 @@ public class TaskCoreDataInfo: NSManagedObject {
                     taskInfoDB.title = taskInfo.title
                     taskInfoDB.taskDescription = taskInfo.description
                     taskInfoDB.dueDate = taskInfo.dueDate
+                    taskInfoDB.isChecked = taskInfo.isChecked
                 } else {
                     print("Saved task update data not found")
                 }

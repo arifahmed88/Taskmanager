@@ -9,20 +9,26 @@ import UIKit
 
 extension UILabel {
     
-    func strikeThrough(_ isStrikeThrough:Bool) {
+    func updateTextWithStrikeThrough( labelText:String, isStrikeThrough:Bool) {
+        
+        guard let textFont = self.font, let color = textColor else {return}
+        
         if isStrikeThrough {
-            if let lblText = self.text {
-                let attributeString =  NSMutableAttributedString(string: lblText)
-                attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: NSUnderlineStyle.single.rawValue, range: NSMakeRange(0,attributeString.length))
-                self.attributedText = attributeString
-            }
+            let multipleAttributes: [NSAttributedString.Key : Any] = [
+                NSAttributedString.Key.foregroundColor: color,
+                NSAttributedString.Key.font: textFont,
+                NSAttributedString.Key.strikethroughStyle: NSUnderlineStyle.single.rawValue]
+            let attributeString = NSMutableAttributedString(string: labelText, attributes: multipleAttributes)
+            self.attributedText = attributeString
+            
         } else {
-            if let attributedStringText = self.attributedText {
-                let txt = attributedStringText.string
-                self.attributedText = nil
-                self.text = txt
-                return
-            }
+            
+            let multipleAttributes: [NSAttributedString.Key : Any] = [
+                NSAttributedString.Key.foregroundColor: color,
+                NSAttributedString.Key.font: textFont]
+            let attributeString = NSMutableAttributedString(string: labelText, attributes: multipleAttributes)
+            self.attributedText = attributeString
         }
+        
     }
 }

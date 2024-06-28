@@ -62,7 +62,7 @@ class TaskEditViewController: UIViewController {
     func configureVC(state:TaskEditState, data: TaskCoreDataInfo?){
         self.state = state
         if let data{
-            self.previousTaskdata = TaskDataModel( id: data.uniqueID ?? UUID().uuidString,title: data.title ?? "", description: data.taskDescription ?? "", dueDate: data.dueDate ?? Date())
+            self.previousTaskdata = TaskDataModel( id: data.uniqueID ?? UUID().uuidString,title: data.title ?? "", description: data.taskDescription ?? "", dueDate: data.dueDate ?? Date(), isChecked: data.isChecked)
         }
     }
     
@@ -123,7 +123,7 @@ class TaskEditViewController: UIViewController {
                 let taskInfo = TaskDataModel(title: title, description: titleDes, dueDate: dueDate)
                 TaskCoreDataInfo.addNewElement(taskInfo: taskInfo)
                 
-                DispatchQueue.main.asyncAfter(deadline: .now()+0.1, execute: {[weak self] in
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.02, execute: {[weak self] in
                     self?.delegate?.addButtonPressAction()
                     self?.dismiss(animated: true)
                 })
@@ -134,7 +134,7 @@ class TaskEditViewController: UIViewController {
                 if let previousTaskdata{
                     TaskCoreDataInfo.updateElement(taskInfo: previousTaskdata)
                 }
-                DispatchQueue.main.asyncAfter(deadline: .now()+0.1, execute: {[weak self] in
+                DispatchQueue.main.asyncAfter(deadline: .now()+0.02, execute: {[weak self] in
                     self?.delegate?.addButtonPressAction()
                     self?.dismiss(animated: true)
                 })

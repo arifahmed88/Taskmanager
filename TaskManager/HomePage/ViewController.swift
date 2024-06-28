@@ -12,7 +12,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var deleteAllButton: UIButton!
     @IBOutlet weak var addItemButton: UIButton!
     @IBOutlet weak var datelabel: UILabel!
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var collectionView: UICollectionView!
     
     var collectionViewPreviousSelectedIndex: IndexPath = IndexPath(item: 0, section: 0)
@@ -32,17 +31,7 @@ class ViewController: UIViewController {
     private func allViewPropertySetup(){
         viewCornerradiusAdd(view: addItemButton, radius: addItemButton.frame.height*0.5)
         showDate()
-        datePickerSetup()
         configureCollectionView()
-    }
-    
-    private func datePickerSetup(){
-        datePicker.preferredDatePickerStyle = .automatic
-        datePicker.datePickerMode = .date
-        if let color = UIColor(named: "ThemeColor"){
-            datePicker.tintColor = color
-        }
-        
     }
     
    
@@ -94,7 +83,7 @@ class ViewController: UIViewController {
     }
     
     func showAlertForDeleteAllBtnAction() {
-        let alert = UIAlertController(title: "Delete All", message: "Are you sure you want to All Tsak? Your data will be lost permanently.", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Delete All", message: "Are you sure you want to remove All Tsaks? Your data will be lost permanently.", preferredStyle: .alert)
         
         alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: { _ in
             
@@ -133,8 +122,9 @@ extension ViewController: UICollectionViewDataSource {
             let taskInfo = viewModel.getData(index: indexPath.item)
             
             let title = "\(indexPath.item+1). \(taskInfo?.title ?? "")"
-            cell.setupCell(title: title, description: taskInfo?.taskDescription, date: taskInfo?.dueDate)
+            cell.setupCell(title: title, description: taskInfo?.taskDescription, date: taskInfo?.dueDate, isChecked: taskInfo?.isChecked ?? false)
             
+           
             let id = taskInfo?.uniqueID
             cell.taskDeleteAction = {[weak self] in
                 if let id{
@@ -146,6 +136,10 @@ extension ViewController: UICollectionViewDataSource {
             cell.taskEditAction = {[weak self] in
                 self?.gotoTaskEditPage(taskIndex: indexPath.item)
             }
+            
+            cell.taskCheckAction = {[weak self] isChecked in
+                self?.viewModel.updateItemCheckState(isChecked: isChecked, index: indexPath.item)
+            }
             return cell
         }
         
@@ -153,6 +147,7 @@ extension ViewController: UICollectionViewDataSource {
     }
     
     private func gotoTaskEditPage(taskIndex:Int){
+        
         let task = viewModel.getData(index: taskIndex)
         let vc = TaskEditViewController()
         vc.delegate = self

@@ -19,7 +19,7 @@ class TaskCollectionViewCell: UICollectionViewCell {
     
     var taskDeleteAction: (()->Void)? = nil
     var taskEditAction: (()->Void)? = nil
-    var taskCheckAction: (()->Void)? = nil
+    var taskCheckAction: ((Bool)->Void)? = nil
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -41,14 +41,18 @@ class TaskCollectionViewCell: UICollectionViewCell {
     }
     
     @objc func onCheckBoxValueChange(_ sender: CheckBox) {
-        titleLabel.strikeThrough(sender.isChecked)
-        titleDescription.strikeThrough(sender.isChecked)
-        taskCheckAction?()
+        print("oni1 = \(sender.isChecked)")
+        
+        labelTextUpdate(text: titleLabel.attributedText?.string ?? "", label: titleLabel, isChecked: sender.isChecked)
+        labelTextUpdate(text: titleDescription.attributedText?.string ?? "", label: titleDescription, isChecked: sender.isChecked)
+        taskCheckAction?(sender.isChecked)
     }
         
-    func setupCell(title:String?,description:String?,date:Date?){
-        labelTextUpdate(text: title ?? "", label: titleLabel)
-        labelTextUpdate(text: description ?? "", label: titleDescription)
+    func setupCell(title:String?,description:String?,date:Date?,isChecked:Bool){
+        labelTextUpdate(text: title ?? "", label: titleLabel, isChecked: isChecked)
+        labelTextUpdate(text: description ?? "", label: titleDescription, isChecked: isChecked)
+        
+        
         let dateText:String
         if let newDate = date{
             let dateFormatter = DateFormatter.localizedString(from: newDate, dateStyle: .medium, timeStyle: .short)
@@ -56,11 +60,12 @@ class TaskCollectionViewCell: UICollectionViewCell {
         } else {
             dateText = ""
         }
-        labelTextUpdate(text: dateText, label: dateLabel)
+        labelTextUpdate(text: dateText, label: dateLabel, isChecked: false)
+        checkBox.isChecked = isChecked
     }
     
-    private func labelTextUpdate(text:String, label:UILabel){
-        label.text = text
+    private func labelTextUpdate(text:String, label:UILabel, isChecked:Bool){
+        label.updateTextWithStrikeThrough(labelText: text, isStrikeThrough: isChecked)
         label.sizeToFit()
     }
     

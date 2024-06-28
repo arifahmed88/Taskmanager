@@ -29,14 +29,11 @@
                                 </attributedString>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="V13-ga-rc4">
-                                <rect key="frame" x="0.0" y="118.66666666666669" width="368" height="40"/>
-                            </datePicker>
                             <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xFl-bb-96S" userLabel="CVHolderView">
-                                <rect key="frame" x="0.0" y="158.66666666666669" width="390" height="685.33333333333326"/>
+                                <rect key="frame" x="0.0" y="123.33333333333331" width="390" height="720.66666666666674"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="fuU-Wn-aV0">
-                                        <rect key="frame" x="0.0" y="61" width="390" height="624.33333333333337"/>
+                                        <rect key="frame" x="0.0" y="54" width="390" height="666.66666666666663"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TXQ-kW-geM">
                                             <size key="itemSize" width="128" height="128"/>
@@ -56,13 +53,13 @@
                                         </cells>
                                     </collectionView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task List" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n1A-hJ-0Rf">
-                                        <rect key="frame" x="22" y="10" width="117" height="35"/>
-                                        <fontDescription key="fontDescription" name="Gilroy-ExtraBold" family="Gilroy-ExtraBold" pointSize="30"/>
+                                        <rect key="frame" x="22.000000000000007" y="10.000000000000014" width="93.666666666666686" height="28"/>
+                                        <fontDescription key="fontDescription" name="Gilroy-ExtraBold" family="Gilroy-ExtraBold" pointSize="24"/>
                                         <color key="textColor" red="0.59190582479659859" green="0.59190582479659859" blue="0.59190582479659859" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Crp-hg-Iih">
-                                        <rect key="frame" x="284.66666666666669" y="12.333333333333341" width="83.333333333333314" height="30.333333333333329"/>
+                                        <rect key="frame" x="284.66666666666669" y="9.0000000000000124" width="83.333333333333314" height="30.333333333333329"/>
                                         <color key="tintColor" name="DeleteColor"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Delete All">
@@ -115,24 +112,20 @@
                         <constraints>
                             <constraint firstItem="xFl-bb-96S" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="29w-K1-ySb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="p0J-Yb-UOR" secondAttribute="bottom" constant="30" id="4Ze-Gm-Mne"/>
-                            <constraint firstItem="V13-ga-rc4" firstAttribute="top" secondItem="nRM-s6-xta" secondAttribute="bottom" constant="20" id="8lp-9t-aHB"/>
                             <constraint firstItem="nRM-s6-xta" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="26" id="AkT-Tn-qJF"/>
                             <constraint firstAttribute="bottom" secondItem="xFl-bb-96S" secondAttribute="bottom" id="C5a-1H-HJv"/>
-                            <constraint firstItem="V13-ga-rc4" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="DIa-aN-sjJ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Byd-Ia-JZ2" secondAttribute="trailing" constant="22" id="EM6-0q-222"/>
                             <constraint firstItem="nRM-s6-xta" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="22" id="NH9-vu-Osq"/>
-                            <constraint firstItem="V13-ga-rc4" firstAttribute="trailing" secondItem="Byd-Ia-JZ2" secondAttribute="trailing" id="YDc-F6-bCA"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="p0J-Yb-UOR" secondAttribute="trailing" constant="30" id="Z5X-ua-gxk"/>
                             <constraint firstItem="Byd-Ia-JZ2" firstAttribute="centerY" secondItem="nRM-s6-xta" secondAttribute="centerY" id="bw6-aZ-iNB"/>
                             <constraint firstItem="n1A-hJ-0Rf" firstAttribute="leading" secondItem="nRM-s6-xta" secondAttribute="leading" id="mhU-Yb-Viw"/>
-                            <constraint firstItem="xFl-bb-96S" firstAttribute="top" secondItem="V13-ga-rc4" secondAttribute="bottom" id="r2R-UG-DBo"/>
+                            <constraint firstItem="xFl-bb-96S" firstAttribute="top" secondItem="Byd-Ia-JZ2" secondAttribute="bottom" constant="20" id="p0I-V9-iXt"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xFl-bb-96S" secondAttribute="trailing" id="rW8-oB-TQc"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="addItemButton" destination="p0J-Yb-UOR" id="Jkp-Hp-8qW"/>
                         <outlet property="collectionView" destination="fuU-Wn-aV0" id="e5j-ka-jHk"/>
-                        <outlet property="datePicker" destination="V13-ga-rc4" id="GCs-eA-oFH"/>
                         <outlet property="datelabel" destination="nRM-s6-xta" id="cxL-Eq-uwR"/>
                         <outlet property="deleteAllButton" destination="Crp-hg-Iih" id="ckR-DQ-3aQ"/>
                     </connections>
@@ -148,7 +141,7 @@
             <color red="1" green="0.14117647058823529" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="ThemeColor">
-            <color red="0.23137254901960785" green="0.2627450980392157" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.070588235294117646" green="0.77647058823529413" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
