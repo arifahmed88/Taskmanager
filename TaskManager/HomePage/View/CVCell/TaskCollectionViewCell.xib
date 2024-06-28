@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22504"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="TaskCollectionViewCell" customModule="TaskManager" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="415" height="119"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="415" height="119"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1Kp-l1-74W">
+                        <rect key="frame" x="0.0" y="0.0" width="415" height="119"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ose-t4-ORd">
+                                <rect key="frame" x="46" y="16" width="276" height="18.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="16"/>
+                                <color key="textColor" white="0.98480017006802723" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" text="Description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ups-xj-hKh">
+                                <rect key="frame" x="16" y="44.666666666666671" width="383" height="36.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="13"/>
+                                <color key="textColor" white="0.83627970810650154" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="btx-Lg-LNF">
+                                <rect key="frame" x="378" y="91.333333333333329" width="21" height="11.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Gilroy-Medium" family="Gilroy-Medium" pointSize="10"/>
+                                <color key="textColor" red="0.59190582479999998" green="0.59190582479999998" blue="0.59190582479999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="pWh-yv-Iv5">
+                                <rect key="frame" x="332" y="6" width="73" height="34"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uwb-fE-jgt">
+                                        <rect key="frame" x="0.0" y="0.0" width="34" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="34" id="GEc-jR-bNi"/>
+                                            <constraint firstAttribute="width" secondItem="Uwb-fE-jgt" secondAttribute="height" id="dvj-dR-cHm"/>
+                                        </constraints>
+                                        <color key="tintColor" name="ThemeColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title=" " image="editIcon"/>
+                                        <connections>
+                                            <action selector="editButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="gGE-3R-RNC"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fBV-fM-f2C">
+                                        <rect key="frame" x="39" y="0.0" width="34" height="34"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="fBV-fM-f2C" secondAttribute="height" id="91m-AK-0lR"/>
+                                            <constraint firstAttribute="height" constant="34" id="a3W-3c-Ejd"/>
+                                            <constraint firstAttribute="width" secondItem="fBV-fM-f2C" secondAttribute="height" id="fwp-7k-lNU"/>
+                                        </constraints>
+                                        <color key="tintColor" systemColor="systemPinkColor"/>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <state key="normal" title=" " image="deleteIcon"/>
+                                        <connections>
+                                            <action selector="deleteButtonAction:" destination="gTV-IL-0wX" eventType="touchUpInside" id="8tq-pI-7Y3"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DYq-6Q-nVQ" customClass="CheckBox" customModule="TaskManager" customModuleProvider="target">
+                                <rect key="frame" x="16" y="16" width="20" height="20"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="20" id="Vpb-Lv-7Cx"/>
+                                    <constraint firstAttribute="width" secondItem="DYq-6Q-nVQ" secondAttribute="height" id="l1s-2G-AVQ"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="checkedBorderColor">
+                                        <color key="value" name="ThemeColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="checkmarkColor">
+                                        <color key="value" name="ThemeColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="uncheckedBorderColor">
+                                        <color key="value" name="ThemeColor"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isChecked" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                        <real key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="0.1683939200680272" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="btx-Lg-LNF" secondAttribute="trailing" constant="16" id="8c8-aw-yfx"/>
+                            <constraint firstItem="Ups-xj-hKh" firstAttribute="top" secondItem="ose-t4-ORd" secondAttribute="bottom" constant="10" id="9Ra-Oi-Qdp"/>
+                            <constraint firstItem="Ups-xj-hKh" firstAttribute="trailing" secondItem="btx-Lg-LNF" secondAttribute="trailing" id="Fhx-f5-TUo"/>
+                            <constraint firstItem="DYq-6Q-nVQ" firstAttribute="leading" secondItem="1Kp-l1-74W" secondAttribute="leading" constant="16" id="GMp-Ub-sjP"/>
+                            <constraint firstItem="pWh-yv-Iv5" firstAttribute="leading" secondItem="ose-t4-ORd" secondAttribute="trailing" constant="10" id="O79-fB-H1r"/>
+                            <constraint firstItem="ose-t4-ORd" firstAttribute="top" secondItem="1Kp-l1-74W" secondAttribute="top" constant="16" id="Qi5-fj-b8v"/>
+                            <constraint firstItem="Ups-xj-hKh" firstAttribute="leading" secondItem="DYq-6Q-nVQ" secondAttribute="leading" id="UnF-WS-YBK"/>
+                            <constraint firstAttribute="bottom" secondItem="btx-Lg-LNF" secondAttribute="bottom" constant="16" id="cxY-0L-vuT"/>
+                            <constraint firstAttribute="trailing" secondItem="pWh-yv-Iv5" secondAttribute="trailing" constant="10" id="dJK-Qj-R4S"/>
+                            <constraint firstItem="DYq-6Q-nVQ" firstAttribute="top" secondItem="ose-t4-ORd" secondAttribute="top" id="e69-PN-5It"/>
+                            <constraint firstItem="pWh-yv-Iv5" firstAttribute="top" secondItem="ose-t4-ORd" secondAttribute="top" constant="-10" id="fHj-Dh-9yf"/>
+                            <constraint firstItem="btx-Lg-LNF" firstAttribute="top" secondItem="Ups-xj-hKh" secondAttribute="bottom" constant="10" id="iOQ-fK-E6h"/>
+                            <constraint firstItem="ose-t4-ORd" firstAttribute="leading" secondItem="DYq-6Q-nVQ" secondAttribute="trailing" constant="10" id="wkr-60-Lsl"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="1Kp-l1-74W" secondAttribute="trailing" id="Bpo-c4-P0P"/>
+                <constraint firstItem="1Kp-l1-74W" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="OV5-WN-m5q"/>
+                <constraint firstItem="1Kp-l1-74W" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="URv-xN-bL0"/>
+                <constraint firstAttribute="bottom" secondItem="1Kp-l1-74W" secondAttribute="bottom" id="fd1-6Q-UKb"/>
+            </constraints>
+            <size key="customSize" width="415" height="119"/>
+            <connections>
+                <outlet property="checkBox" destination="DYq-6Q-nVQ" id="l0n-t3-UTk"/>
+                <outlet property="dateLabel" destination="btx-Lg-LNF" id="I8j-uW-nfK"/>
+                <outlet property="holderVIew" destination="1Kp-l1-74W" id="1Xv-DQ-0t3"/>
+                <outlet property="titleDescription" destination="Ups-xj-hKh" id="0Jv-Ty-CZ3"/>
+                <outlet property="titleLabel" destination="ose-t4-ORd" id="vMe-0M-c1f"/>
+            </connections>
+            <point key="canvasLocation" x="417.55725190839695" y="44.014084507042256"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="deleteIcon" width="24" height="24"/>
+        <image name="editIcon" width="24" height="24"/>
+        <namedColor name="ThemeColor">
+            <color red="0.070588235294117646" green="0.77647058823529413" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemPinkColor">
+            <color red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
