@@ -16,7 +16,6 @@ public class TaskCoreDataInfo: NSManagedObject {
     class func addNewElement(taskInfo: TaskDataModel) {
         
         if let context = DatabaseHelper.getContext(){
-            
             do {
                 let taskInfoDB = TaskCoreDataInfo(context: context)
                 taskInfoDB.uniqueID = taskInfo.uniqueID
