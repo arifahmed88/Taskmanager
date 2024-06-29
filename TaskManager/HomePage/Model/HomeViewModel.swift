@@ -7,13 +7,20 @@
 
 import Foundation
 
-class TaskDataListInfo{
+class HomeViewModel{
     private var tasksDataList:[TaskCoreDataInfo] = []
+    var service:TaskManagerService
     
-    init(){}
+    init(){
+        let coreDataStack = CoreDataStack()
+        let restoDataStore = TaskManagerDataStore(context: coreDataStack.viewContext, coreDataStack: coreDataStack)
+        service = TaskManagerService(dataStore: restoDataStore)
+    }
     
     func updateList(){
-        tasksDataList = TaskCoreDataInfo.fetchAllDrafts() ?? []
+        service.fetchTask(completion: {[weak self] allTasks in
+            self?.tasksDataList = allTasks
+        })
     }
     
     func getTotalDataCount()->Int{
@@ -28,7 +35,7 @@ class TaskDataListInfo{
     }
     
     func removeItem(id:String){
-        TaskCoreDataInfo.deleteItem(uuid: id)
+        service.deleteTask(uniqueID: id)
         updateList()
     }
     
@@ -37,14 +44,14 @@ class TaskDataListInfo{
             return
         }
         let previousData = tasksDataList[index]
-        let task = TaskDataModel(id: previousData.uniqueID ?? "", title: previousData.title ?? "", description: previousData.taskDescription ?? "", dueDate: previousData.dueDate ?? Date(), isChecked: isChecked)
         
-        TaskCoreDataInfo.updateElement(taskInfo: task)
+        previousData.isChecked = isChecked
+        service.updateTask(task: previousData)
         updateList()
     }
     
     func removeAllItem(){
-        TaskCoreDataInfo.deleteAllItem()
+        service.deleteAllTask()
         tasksDataList.removeAll()
         updateList()
     }

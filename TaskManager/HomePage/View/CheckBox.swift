@@ -210,38 +210,3 @@ open class CheckBox: UIControl {
         context.restoreGState()
     }
 }
-
-
-//class ViewController: UIViewController {
-//   
-//    @IBOutlet var cb1: CheckBox!
-//    @IBOutlet var cb2: CheckBox!
-//    @IBOutlet var cb3: CheckBox!
-//    @IBOutlet var cb4: CheckBox!
-//    
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        
-//        cb1.style = .square
-//        cb2.style = .cross
-//        cb3.style = .circle
-//        cb4.style = .tick
-//        
-//        cb1.borderStyle = .rounded
-//        cb2.borderStyle = .square
-//        cb3.borderStyle = .roundedSquare(radius: 8)
-//        cb4.borderStyle = .roundedSquare(radius: 12)
-//
-//        let cb5 = CheckBox.init()
-//        cb5.frame = CGRect(x: 25, y: 25, width: 35, height: 35)
-//        cb5.style = .tick
-//        cb5.borderStyle = .roundedSquare(radius: 5)
-//        cb5.addTarget(self, action: #selector(onCheckBoxValueChange(_:)), for: .valueChanged)
-//        view.addSubview(cb5)
-//    }
-//
-//    @objc func onCheckBoxValueChange(_ sender: CheckBox) {
-//        
-//        print(sender.isChecked)
-//    }
-//}

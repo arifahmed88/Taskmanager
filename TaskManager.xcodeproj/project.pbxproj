@@ -12,7 +12,11 @@
 		BAEDA6112C2F2A9B00B624C5 /* UILabel+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6102C2F2A9B00B624C5 /* UILabel+Extention.swift */; };
 		BAEDA6142C2F2CD500B624C5 /* TaskCoreDataInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6122C2F2CD500B624C5 /* TaskCoreDataInfo+CoreDataClass.swift */; };
 		BAEDA6152C2F2CD500B624C5 /* TaskCoreDataInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6132C2F2CD500B624C5 /* TaskCoreDataInfo+CoreDataProperties.swift */; };
-		BAEDA6172C2F2D7100B624C5 /* DatabaseHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6162C2F2D7100B624C5 /* DatabaseHelper.swift */; };
+		BAEDA61B2C302E2600B624C5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA61A2C302E2600B624C5 /* CoreDataStack.swift */; };
+		BAEDA61C2C302E2600B624C5 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA61A2C302E2600B624C5 /* CoreDataStack.swift */; };
+		BAEDA6202C302F2A00B624C5 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA61E2C302F2A00B624C5 /* TestCoreDataStack.swift */; };
+		BAEDA6222C3031E300B624C5 /* TaskManagerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6212C3031E300B624C5 /* TaskManagerService.swift */; };
+		BAEDA6242C3033CD00B624C5 /* TaskManagerDataStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEDA6232C3033CD00B624C5 /* TaskManagerDataStore.swift */; };
 		BAEE74602C2DBA23004293CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE745F2C2DBA23004293CE /* AppDelegate.swift */; };
 		BAEE74622C2DBA23004293CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE74612C2DBA23004293CE /* SceneDelegate.swift */; };
 		BAEE74642C2DBA23004293CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE74632C2DBA23004293CE /* ViewController.swift */; };
@@ -37,8 +41,8 @@
 		BAEE74A62C2DDD1C004293CE /* TaskCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BAEE74A02C2DDD1C004293CE /* TaskCollectionViewCell.xib */; };
 		BAEE74AA2C2DDD89004293CE /* NSObject+Extention.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE74A92C2DDD89004293CE /* NSObject+Extention.swift */; };
 		BAEE74AD2C2DDEA3004293CE /* TaskDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE74AC2C2DDEA3004293CE /* TaskDataModel.swift */; };
-		BAEE74B62C2DE6DA004293CE /* TaskDataListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE74B52C2DE6DA004293CE /* TaskDataListInfo.swift */; };
-		BAEE74B72C2DE6DA004293CE /* TaskDataListInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE74B52C2DE6DA004293CE /* TaskDataListInfo.swift */; };
+		BAEE74B62C2DE6DA004293CE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE74B52C2DE6DA004293CE /* HomeViewModel.swift */; };
+		BAEE74B72C2DE6DA004293CE /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEE74B52C2DE6DA004293CE /* HomeViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,7 +68,10 @@
 		BAEDA6102C2F2A9B00B624C5 /* UILabel+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extention.swift"; sourceTree = "<group>"; };
 		BAEDA6122C2F2CD500B624C5 /* TaskCoreDataInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskCoreDataInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
 		BAEDA6132C2F2CD500B624C5 /* TaskCoreDataInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TaskCoreDataInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		BAEDA6162C2F2D7100B624C5 /* DatabaseHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseHelper.swift; sourceTree = "<group>"; };
+		BAEDA61A2C302E2600B624C5 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		BAEDA61E2C302F2A00B624C5 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
+		BAEDA6212C3031E300B624C5 /* TaskManagerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerService.swift; sourceTree = "<group>"; };
+		BAEDA6232C3033CD00B624C5 /* TaskManagerDataStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskManagerDataStore.swift; sourceTree = "<group>"; };
 		BAEE745C2C2DBA23004293CE /* TaskManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TaskManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAEE745F2C2DBA23004293CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BAEE74612C2DBA23004293CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,7 +92,7 @@
 		BAEE74A02C2DDD1C004293CE /* TaskCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TaskCollectionViewCell.xib; sourceTree = "<group>"; };
 		BAEE74A92C2DDD89004293CE /* NSObject+Extention.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Extention.swift"; sourceTree = "<group>"; };
 		BAEE74AC2C2DDEA3004293CE /* TaskDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDataModel.swift; sourceTree = "<group>"; };
-		BAEE74B52C2DE6DA004293CE /* TaskDataListInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskDataListInfo.swift; sourceTree = "<group>"; };
+		BAEE74B52C2DE6DA004293CE /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +120,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		BAEDA61D2C302E9200B624C5 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				BAEE74AE2C2DE093004293CE /* CoreData */,
+				BAEDA6212C3031E300B624C5 /* TaskManagerService.swift */,
+				BAEDA6232C3033CD00B624C5 /* TaskManagerDataStore.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		BAEDA6252C303F9600B624C5 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				BAEE74632C2DBA23004293CE /* ViewController.swift */,
+				BAEE74652C2DBA23004293CE /* Main.storyboard */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 		BAEE74532C2DBA23004293CE = {
 			isa = PBXGroup;
 			children = (
@@ -136,7 +162,7 @@
 		BAEE745E2C2DBA23004293CE /* TaskManager */ = {
 			isa = PBXGroup;
 			children = (
-				BAEE74AE2C2DE093004293CE /* Database */,
+				BAEDA61D2C302E9200B624C5 /* Service */,
 				BAEE74A72C2DDD71004293CE /* Helper */,
 				BAEE74932C2DBA59004293CE /* EditPage */,
 				BAEE74922C2DBA52004293CE /* HomePage */,
@@ -145,7 +171,6 @@
 				BAEE746B2C2DBA24004293CE /* Assets.xcassets */,
 				BAEE746D2C2DBA24004293CE /* LaunchScreen.storyboard */,
 				BAEE74702C2DBA24004293CE /* Info.plist */,
-				BAEE74682C2DBA23004293CE /* TaskManager.xcdatamodeld */,
 			);
 			path = TaskManager;
 			sourceTree = "<group>";
@@ -154,6 +179,7 @@
 			isa = PBXGroup;
 			children = (
 				BAEE74792C2DBA24004293CE /* TaskManagerTests.swift */,
+				BAEDA61E2C302F2A00B624C5 /* TestCoreDataStack.swift */,
 			);
 			path = TaskManagerTests;
 			sourceTree = "<group>";
@@ -172,8 +198,6 @@
 			children = (
 				BAEE74AB2C2DDE91004293CE /* Model */,
 				BAEE749D2C2DDCE5004293CE /* View */,
-				BAEE74632C2DBA23004293CE /* ViewController.swift */,
-				BAEE74652C2DBA23004293CE /* Main.storyboard */,
 			);
 			path = HomePage;
 			sourceTree = "<group>";
@@ -190,6 +214,7 @@
 		BAEE749D2C2DDCE5004293CE /* View */ = {
 			isa = PBXGroup;
 			children = (
+				BAEDA6252C303F9600B624C5 /* ViewController */,
 				BA3E4ABA2C2ED30000518634 /* CheckBox.swift */,
 				BAEE749E2C2DDCEA004293CE /* CVCell */,
 			);
@@ -226,20 +251,21 @@
 			isa = PBXGroup;
 			children = (
 				BAEE74AC2C2DDEA3004293CE /* TaskDataModel.swift */,
-				BAEE74B52C2DE6DA004293CE /* TaskDataListInfo.swift */,
+				BAEE74B52C2DE6DA004293CE /* HomeViewModel.swift */,
 				BA3E4AB82C2EC16000518634 /* CustomCVLayout.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
 		};
-		BAEE74AE2C2DE093004293CE /* Database */ = {
+		BAEE74AE2C2DE093004293CE /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				BAEE74682C2DBA23004293CE /* TaskManager.xcdatamodeld */,
 				BAEDA6122C2F2CD500B624C5 /* TaskCoreDataInfo+CoreDataClass.swift */,
 				BAEDA6132C2F2CD500B624C5 /* TaskCoreDataInfo+CoreDataProperties.swift */,
-				BAEDA6162C2F2D7100B624C5 /* DatabaseHelper.swift */,
+				BAEDA61A2C302E2600B624C5 /* CoreDataStack.swift */,
 			);
-			path = Database;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -380,12 +406,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAEDA6142C2F2CD500B624C5 /* TaskCoreDataInfo+CoreDataClass.swift in Sources */,
-				BAEDA6172C2F2D7100B624C5 /* DatabaseHelper.swift in Sources */,
 				BAEE74642C2DBA23004293CE /* ViewController.swift in Sources */,
 				BAEE74602C2DBA23004293CE /* AppDelegate.swift in Sources */,
+				BAEDA6242C3033CD00B624C5 /* TaskManagerDataStore.swift in Sources */,
 				BAEE74AA2C2DDD89004293CE /* NSObject+Extention.swift in Sources */,
 				BAEE746A2C2DBA23004293CE /* TaskManager.xcdatamodeld in Sources */,
 				BAEDA6152C2F2CD500B624C5 /* TaskCoreDataInfo+CoreDataProperties.swift in Sources */,
+				BAEDA61B2C302E2600B624C5 /* CoreDataStack.swift in Sources */,
+				BAEDA6222C3031E300B624C5 /* TaskManagerService.swift in Sources */,
 				BAEE74AD2C2DDEA3004293CE /* TaskDataModel.swift in Sources */,
 				BAEE74A12C2DDD1C004293CE /* TaskCollectionViewCell.swift in Sources */,
 				BAEE74622C2DBA23004293CE /* SceneDelegate.swift in Sources */,
@@ -393,7 +421,7 @@
 				BAEDA6112C2F2A9B00B624C5 /* UILabel+Extention.swift in Sources */,
 				BA3E4ABB2C2ED30000518634 /* CheckBox.swift in Sources */,
 				BAEE74972C2DBA92004293CE /* TaskEditViewController.swift in Sources */,
-				BAEE74B62C2DE6DA004293CE /* TaskDataListInfo.swift in Sources */,
+				BAEE74B62C2DE6DA004293CE /* HomeViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -401,10 +429,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAEE74B72C2DE6DA004293CE /* TaskDataListInfo.swift in Sources */,
+				BAEE74B72C2DE6DA004293CE /* HomeViewModel.swift in Sources */,
 				BAEE74A22C2DDD1C004293CE /* TaskCollectionViewCell.swift in Sources */,
+				BAEDA61C2C302E2600B624C5 /* CoreDataStack.swift in Sources */,
 				BAEE747A2C2DBA24004293CE /* TaskManagerTests.swift in Sources */,
 				BAEE74982C2DBA92004293CE /* TaskEditViewController.swift in Sources */,
+				BAEDA6202C302F2A00B624C5 /* TestCoreDataStack.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

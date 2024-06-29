@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var collectionView: UICollectionView!
     
     var collectionViewPreviousSelectedIndex: IndexPath = IndexPath(item: 0, section: 0)
-    var viewModel = TaskDataListInfo()
+    var viewModel = HomeViewModel()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +71,7 @@ class ViewController: UIViewController {
     @IBAction func addItemButtonAction(_ sender: Any) {
         let vc = TaskEditViewController()
         vc.delegate = self
-        vc.configureVC(state: .new, data: nil)
+        vc.configureVC(state: .new, data: nil, service: viewModel.service)
         present(vc, animated: true)
     }
     
@@ -151,7 +151,7 @@ extension ViewController: UICollectionViewDataSource {
         let task = viewModel.getData(index: taskIndex)
         let vc = TaskEditViewController()
         vc.delegate = self
-        vc.configureVC(state: .update, data: task)
+        vc.configureVC(state: .update, data: task, service: viewModel.service)
         present(vc, animated: true)
     }
     
