@@ -26,7 +26,7 @@ class TaskEditViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     
     var delegate:TaskEditViewControllerDelegate?
-    private var previousTaskdata:TaskDataModel?
+    private var previousTaskdata:TaskCoreDataInfo?
     private var state:TaskEditState = .new
     private var viewModel = HomeViewModel()
     
@@ -64,9 +64,7 @@ class TaskEditViewController: UIViewController {
     func configureVC(state:TaskEditState, data: TaskCoreDataInfo?, service:TaskManagerService?){
         self.service = service
         self.state = state
-        if let data{
-            self.previousTaskdata = TaskDataModel( id: data.uniqueID ?? UUID().uuidString,title: data.title ?? "", description: data.taskDescription ?? "", dueDate: data.dueDate ?? Date(), isChecked: data.isChecked)
-        }
+        self.previousTaskdata = data
     }
     
     private func textUpdate(){
@@ -75,8 +73,8 @@ class TaskEditViewController: UIViewController {
             saveButton.setTitle("Update", for: .normal)
             if let previousTaskdata{
                 titleTextView.text = previousTaskdata.title
-                descripTionTextView.text = previousTaskdata.description
-                datePicker.date = previousTaskdata.dueDate
+                descripTionTextView.text = previousTaskdata.taskDescription
+                datePicker.date = previousTaskdata.dueDate ?? Date()
             } else {
                 titleTextView.text = ""
                 descripTionTextView.text = ""
@@ -132,17 +130,12 @@ class TaskEditViewController: UIViewController {
                 })
             } else {
                 previousTaskdata?.title = titleTextView.text
-                previousTaskdata?.description = descripTionTextView.text
+                previousTaskdata?.taskDescription = descripTionTextView.text
                 previousTaskdata?.dueDate = datePicker.date
                 
                 
                 if let previousTaskdata{
-                    let task = TaskCoreDataInfo()
-                    task.uniqueID = previousTaskdata.uniqueID
-                    task.title = titleTextView.text
-                    task.taskDescription = descripTionTextView.text
-                    task.dueDate = datePicker.date
-                    service?.updateTask(task: task)
+                    service?.updateTask(task: previousTaskdata)
                 }
                 DispatchQueue.main.asyncAfter(deadline: .now()+0.02, execute: {[weak self] in
                     self?.delegate?.addButtonPressAction()
