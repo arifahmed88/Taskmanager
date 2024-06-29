@@ -204,9 +204,9 @@
 		BAEE749D2C2DDCE5004293CE /* View */ = {
 			isa = PBXGroup;
 			children = (
-				BAEDA6252C303F9600B624C5 /* ViewController */,
 				BA3E4ABA2C2ED30000518634 /* CheckBox.swift */,
 				BAEE749E2C2DDCEA004293CE /* CVCell */,
+				BAEDA6252C303F9600B624C5 /* ViewController */,
 			);
 			path = View;
 			sourceTree = "<group>";

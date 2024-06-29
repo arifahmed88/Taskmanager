@@ -95,7 +95,7 @@
                                     <action selector="addItemButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2n1-hf-t3h"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byd-Ia-JZ2">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Byd-Ia-JZ2">
                                 <rect key="frame" x="303.33333333333331" y="68.333333333333329" width="64.666666666666686" height="35"/>
                                 <color key="tintColor" name="ThemeColor"/>
                                 <state key="normal" title="Button"/>

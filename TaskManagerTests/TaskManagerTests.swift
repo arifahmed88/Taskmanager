@@ -57,7 +57,6 @@ final class TaskManagerTests: XCTestCase {
         backgroundContext.perform {
             let id = UUID().uuidString
             let date = Date()
-            let dateFormatter = DateFormatter.localizedString(from: date, dateStyle: .medium, timeStyle: .none)
             let task = TaskDataModel(id: id, title: "Testing", description: "Testing is Going on", dueDate: date, isChecked: false)
             let newTask = self.sut.addTask(taskInfo: task)
             
